@@ -1,0 +1,9 @@
+import re
+import pathlib
+phone_num_obj = re.compile(r'\d{3}-\d{3}-\d{4}')
+text_file = open('./website_text.txt', encoding = 'UTF-8')
+
+
+raw_text = text_file.read()
+match_text = phone_num_obj.search(raw_text)
+match_text.group()

@@ -1,0 +1,17 @@
+import re
+from pathlib import Path
+
+phone_num_obj = re.compile(r'\d{3}-\d{3}-\d{4}')
+
+text_file = open(Path.home() / 'website_text.txt', encoding='UTF-8')
+raw_text = text_file.read()
+text_file.close()
+
+match_text = phone_num_obj.findall(raw_text)
+
+if match_text:
+    for i in match_text:
+        print(i)
+else:
+    print("No phone number found.")
+    print(repr(raw_text))

@@ -1,5 +1,7 @@
+import bext
 import random, sys, time
 
+bext.fg('green')
 WIDTH = 70  # The number of columns
 
 try:
